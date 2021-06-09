@@ -1,0 +1,29 @@
+class Solution{
+    constructor(array,n,k)
+    {
+        this.array = array;//array
+        this.n = n;//no. of elements
+        this.k = k;//kth element
+    }
+    kthelement()
+    {
+        for(let x =0;x<this.array.length-1;x++)
+        {
+            for(var y=0;y<this.array.length-x-1;y++)
+            {
+                if(this.array[y]>this.array[y+1])
+                {
+                    let temp = this.array[y];
+                    this.array[y]=this.array[y+1];
+                    this.array[y+1]=temp;
+                }
+            }
+        }
+        // console.log(this.array);  
+        console.log(this.array[this.k-1]);
+        
+    }
+    
+}
+const solution = new Solution([7,10, 4, 3, 20, 15],6,3);
+solution.kthelement();
